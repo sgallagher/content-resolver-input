@@ -1,0 +1,47 @@
+---
+# This configuration file defines a "Workload" in Feedback Pipeline.
+# https://tiny.distro.builders
+#
+# Workload is a set of packages with a purpouse that someone cares about.
+# They might want to monitor it for the install size, dependencies that get
+# pulled in, etc.
+
+document: feedback-pipeline-workload
+version: 1
+data:
+  # id is the filename — that automatically prevents collisions for free!
+
+
+  ### MANDATORY FIELDS ###
+  
+  # Name is an identifier for humans
+  #
+  # (mandatory field)
+  name: Review Board
+  
+  # A short description, perhaps hinting the purpose
+  #
+  # (mandatory field)
+  description: Review Board Code Review Tool
+
+  # Who maintains it? This is just a freeform string
+  # for humans to read. In Fedora, a FAS nick is recommended.
+  #
+  # (mandatory field)
+  maintainer: sgallagh
+
+  # Packages defining this workload.
+  # This list includes packages for all
+  # architectures — that's the one to use by default.
+  #
+  # (mandatory field)
+  packages:
+  - ReviewBoard
+
+  # Labels connect things together.
+  # Workloads get installed in environments with the same label.
+  # They also get included in views with the same label.
+  # 
+  # (mandatory field)
+  labels:
+  - retirement
